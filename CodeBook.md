@@ -18,7 +18,18 @@ Here you will download a zip file.  The actual files used were:
 
 # Script run
 
-The run_analysis script creates a tidy set out of the above files and outputs a summary table of mean values for a select number of attributes (the ones that were mean or standard deviation)
+The run_analysis script creates a tidy set out of the above files and outputs a summary table of mean values for a select number of attributes (the ones that were mean or standard deviation).  Below are the steps the script follows (see R file for more detailed comments):
+
+* The script first downloads the dataset and extracts them locally
++ Note that this was more straightforward than assuming the data was present in the working directory, because the instructions did not specify whether the data would be zipped, extracted, or the specific files needed would be in the working director. Too ambiguous
+* Three different types of data files have to be loaded and combined to create one large data set - these are first loaded into a data frame for the training and the test data sets
+* The rows of the training and test data sets are merged using rbind for each of the three types
+* For the measurements, the feature labels are combined with the data set, then a regular expression is used to extract the variables relating to mean and standard deviation
++ Note that the instructions were not clear as to whether to include the Mean Freq variables, so these were excluded
+* Redable Column labels were added to the subject and activity data frames manually
+* Activity identifiers for each observation were merged with the descriptive activity name
+* All three data frames were combined to make one tidy data set
+* Group By and Summarize were used to create the table with mean values per the instructions
 
 # Output dataset
 
