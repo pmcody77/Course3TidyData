@@ -12,6 +12,7 @@ All remaining variables represent the mean value for all the measurements corres
 
 #Explanation of the script
 * The script first downloads the dataset and extracts them locally
++ *Note that this was more straightforward than assuming the data was present in the working directory, because the instructions did not specify whether the data would be zipped, extracted, or the specific files needed would be in the working director.  Too ambiguous
 * Three different types of data files have to be loaded and combined to create one large data set - these are first loaded into a data frame for the training and the test data sets
 * The rows of the training and test data sets are merged using rbind for each of the three types
 * For the measurements, the feature labels are combined with the data set, then a regular expression is used to extract the variables relating to mean and standard deviation
